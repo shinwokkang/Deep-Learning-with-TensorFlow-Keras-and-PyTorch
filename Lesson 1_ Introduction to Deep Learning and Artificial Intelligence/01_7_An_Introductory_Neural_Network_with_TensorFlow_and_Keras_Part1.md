@@ -29,45 +29,8 @@
 
 강사는 이번 시간에 딥러닝(Deep Learning)이 아닌 **얕은 신경망(Shallow Net)**을 먼저 만들겠다고 선언합니다. 이전 강의에서 배웠듯, 'Deep'이라는 칭호를 얻으려면 은닉층이 최소 3개(총 5개 층) 이상이어야 하지만, 지금 만들 모델은 단 1개의 은닉층만 가지기 때문입니다.
 
-```mermaid
-graph LR
-    subgraph 입력층 (Input Layer)
-    I1[픽셀 1]
-    I2[픽셀 2]
-    I3[...]
-    I4[픽셀 784]
-    end
+<img width="1169" height="603" alt="image" src="https://github.com/user-attachments/assets/37c29114-5699-40c6-91cd-9e5189fe9dc1" />
 
-    subgraph 은닉층 (Hidden Layer)
-    H1((뉴런 1))
-    H2((뉴런 2))
-    H3((...))
-    H4((뉴런 64))
-    end
-
-    subgraph 출력층 (Output Layer)
-    O1[확률: 숫자 0]
-    O2[확률: 숫자 1]
-    O3[...]
-    O4[확률: 숫자 9]
-    end
-
-    I1 & I2 & I3 & I4 -->|가중치 곱셈| H1 & H2 & H3 & H4
-    H1 & H2 & H3 & H4 -->|특징 매핑| O1 & O2 & O3 & O4
-
-    style I1 fill:#eceff1,stroke:#607d8b
-    style I2 fill:#eceff1,stroke:#607d8b
-    style I3 fill:#eceff1,stroke:#607d8b
-    style I4 fill:#eceff1,stroke:#607d8b
-    style H1 fill:#bbdefb,stroke:#1976d2,stroke-width:2px
-    style H2 fill:#bbdefb,stroke:#1976d2,stroke-width:2px
-    style H3 fill:#bbdefb,stroke:#1976d2,stroke-width:2px
-    style H4 fill:#bbdefb,stroke:#1976d2,stroke-width:2px
-    style O1 fill:#f8bbd0,stroke:#c2185b,stroke-width:2px
-    style O2 fill:#f8bbd0,stroke:#c2185b,stroke-width:2px
-    style O3 fill:#f8bbd0,stroke:#c2185b,stroke-width:2px
-    style O4 fill:#f8bbd0,stroke:#c2185b,stroke-width:2px
-```
 
 *   **입력층 (Input Layer, 784 차원)**: 예를 들어 숫자 '3'이 적힌 28x28짜리 정사각형 이미지를, 1줄짜리 긴 기차(1차원 배열)로 길게 쭉 폅니다. 즉, `[0, 0, ..., 255, 128, ... 0]` 처럼 784개의 픽셀 밝기 숫자들이 한 줄로 나열됩니다.
 *   **은닉층 (Hidden Layer, 64 뉴런)**: 입력층의 784개 숫자가 어떻게 은닉층으로 넘어갈까요? 은닉층의 각 뉴런은 입력된 784개의 픽셀 값에 각각 '가중치(Weight, 중요도)'를 곱해서 모두 더합니다. 
@@ -76,41 +39,9 @@ graph LR
 *   **출력층 (Output Layer, 10 차원)**: 64명의 분석가(은닉층 뉴런)들의 의견을 종합하여, 최종적으로 10개의 뉴런(숫자 0~9 담당)이 각자의 '확신도'를 점수로 매깁니다. 그리고 **소프트맥스(Softmax)**라는 마법의 함수를 거치면, 이 10개의 점수들이 **"다 합쳐서 100%가 되는 확률 값"**으로 변환됩니다.
 
 **[🔍 예시로 보는 데이터 흐름도: 숫자 '3'을 맞추는 과정]**
-```mermaid
-flowchart TD
-    subgraph 1. 입력층 (784 픽셀)
-    I1[픽셀1: 0]
-    I2[픽셀2: 0]
-    I3[...]
-    I4[픽셀350: 255]
-    I5[픽셀351: 255]
-    end
 
-    subgraph 2. 은닉층 (64 뉴런: 특징 분석)
-    H1((뉴런1<br/>'동그라미' 발견))
-    H2((뉴런2<br/>반응 없음))
-    H3((뉴런64<br/>'곡선' 발견))
-    end
+<img width="1240" height="604" alt="image" src="https://github.com/user-attachments/assets/746d9d85-a11a-42ec-8d01-97b345287a7e" />
 
-    subgraph 3. 출력층 (10 뉴런: 소프트맥스 확률)
-    O1[숫자 0: 2%]
-    O3[숫자 2: 5%]
-    O4[숫자 3: 89%]
-    O9[숫자 8: 4%]
-    end
-
-    I1 & I2 & I3 & I4 & I5 -->|가중치(W) 곱셈 후 덧셈| H1
-    I1 & I2 & I3 & I4 & I5 -->|가중치(W) 곱셈 후 덧셈| H2
-    I1 & I2 & I3 & I4 & I5 -->|가중치(W) 곱셈 후 덧셈| H3
-    
-    H1 & H2 & H3 -->|분석 결과 종합| O1 & O3 & O4 & O9
-    
-    style I4 fill:#424242,color:#fff
-    style I5 fill:#424242,color:#fff
-    style H1 fill:#bbdefb,stroke:#1976d2,stroke-width:2px
-    style H3 fill:#bbdefb,stroke:#1976d2,stroke-width:2px
-    style O4 fill:#f8bbd0,stroke:#c2185b,stroke-width:4px
-```
 
 ---
 
