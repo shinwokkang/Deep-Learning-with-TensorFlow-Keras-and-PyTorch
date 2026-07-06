@@ -23,25 +23,8 @@
 2. 각 입력값에 중요도(Weight)를 곱한 뒤 전부 더하는 **가중합(Weighted Sum)** 연산을 수행합니다.
 3. 이 가중합이 특정 **임계치(Threshold)**를 넘으면 신호(1)를 출력하고, 넘지 못하면(0) 무시합니다.
 
-```mermaid
-flowchart TD
-    subgraph 생물학적 뉴런
-    B1[수상돌기 신호 수신] --> B2[세포체에서 전압 합산]
-    B2 --> B3{임계치 돌파?}
-    B3 -->|Yes| B4[축삭돌기로 신호 발사]
-    B3 -->|No| B5[무시]
-    end
+<img width="631" height="593" alt="image" src="https://github.com/user-attachments/assets/caad89ed-4640-43a8-b17b-654b3efca955" />
 
-    subgraph 인공 뉴런 (퍼셉트론)
-    A1[입력값 x 수신] --> A2[가중합 계산: w1x1 + w2x2...]
-    A2 --> A3{가중합 > 임계치?}
-    A3 -->|Yes| A4[출력값: 1]
-    A3 -->|No| A5[출력값: 0]
-    end
-
-    style B3 fill:#ffebee,stroke:#c62828
-    style A3 fill:#e3f2fd,stroke:#1565c0
-```
 
 ---
 
