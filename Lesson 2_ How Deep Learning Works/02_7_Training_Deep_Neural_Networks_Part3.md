@@ -93,8 +93,8 @@ flowchart TD
     G1[GPU 1: Gradients 계산] --> R(All-Reduce: 전체 Gradients 병합)
     G2[GPU 2: Gradients 계산] --> R
     G3[GPU 3: Gradients 계산] --> R
-    R --> L1[Layer 1: ||w_1|| / ||g_1|| 계산]
-    R --> L2[Layer 2: ||w_2|| / ||g_2|| 계산]
+    R --> L1["Layer 1: ||w_1|| / ||g_1|| 계산"]
+    R --> L2["Layer 2: ||w_2|| / ||g_2|| 계산"]
     L1 --> U1[Layer 1 개별 학습률 적용 및 업데이트]
     L2 --> U2[Layer 2 개별 학습률 적용 및 업데이트]
     end
