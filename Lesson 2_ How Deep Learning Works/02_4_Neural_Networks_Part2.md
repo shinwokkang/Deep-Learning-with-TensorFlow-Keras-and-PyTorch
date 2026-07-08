@@ -100,8 +100,8 @@ flowchart TD
     subgraph 비즈니스 도메인별 임계치 차이
     direction LR
     A[Softmax 최고 확률] --> B{도메인 리스크 판별}
-    B -->|패스트푸드 판별 앱| C(임계치 낮음: 50%만 넘어도 '피자'로 확정)
-    B -->|의료 종양(Tumor) 진단| D(임계치 매우 높음: 99%가 넘어야 확진,<br>그 이하는 '재검사' 판정)
+    B -->|패스트푸드 판별 앱| C("임계치 낮음: 50%만 넘어도 '피자'로 확정")
+    B -->|의료 종양(Tumor) 진단| D("임계치 매우 높음: 99%가 넘어야 확진,<br>그 이하는 '재검사' 판정")
     end
     style C fill:#d4edda,stroke:#28a745,stroke-width:2px
     style D fill:#f8d7da,stroke:#dc3545,stroke-width:2px
