@@ -66,8 +66,8 @@ flowchart TD
     subgraph 학습 속도와 손실 함수의 관계
     direction TB
     A[정답과 예측값의 큰 차이] --> B{손실 함수 종류}
-    B -->|Quadratic Cost (MSE)| C[포화 영역 진입 시 기울기 0에 수렴<br>👉 학습 속도 극도로 저하 🐌]
-    B -->|Cross-Entropy| D[로그(log)의 성질로 강력한 오차 신호 발생<br>👉 틀릴수록 엄청나게 빠른 학습 🚀]
+    B -->|Quadratic Cost| C["포화 영역 진입 시 기울기 0에 수렴<br>👉 학습 속도 극도로 저하 🐌"]
+    B -->|Cross-Entropy| D["로그(log)의 성질로 강력한 오차 신호 발생<br>👉 틀릴수록 엄청나게 빠른 학습 🚀"]
     end
     style C fill:#fff3e0,stroke:#e65100
     style D fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
@@ -96,8 +96,8 @@ flowchart LR
     subgraph 비즈니스 문제 정의
     direction TB
     Q1[풀고자 하는 AI 문제] --> C{출력값의 형태는?}
-    C -->|확률 0~1 사이<br>예: 고양이 90%, 개 10%| Classification[분류 문제]
-    C -->|무한한 연속값<br>예: 집값 5억, 주가 10만원| Regression[회귀 문제]
+    C -->|"확률 0~1 사이<br>예: 고양이 90%, 개 10%"| Classification[분류 문제]
+    C -->|"무한한 연속값<br>예: 집값 5억, 주가 10만원"| Regression[회귀 문제]
     end
 
     subgraph 최적의 손실 함수 매칭
