@@ -1,4 +1,4 @@
-# Lesson 3.1: 가중치 초기화 (Weight Initialization) 완전 정복 (초보자 맞춤형)
+# Lesson 3.1: 가중치 초기화 (Weight Initialization) 완전 정복: 원리부터 2026년 실무 트렌드까지
 
 이 문서는 신경망 학습을 처음 접하는 초보자도 쉽게 이해할 수 있도록, 딥러닝의 핵심인 **가중치 초기화(Weight Initialization)**를 구체적인 수치와 예시를 들어 단계별로 설명합니다. 실습 파일(`weight_initialization.ipynb`)의 코드 분석과 2026년 최신 개발 트렌드까지 모두 포함하고 있습니다.
 
