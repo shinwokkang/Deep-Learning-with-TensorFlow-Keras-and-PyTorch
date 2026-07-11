@@ -107,7 +107,7 @@ Nadam은 Adam의 진화형입니다.
 
 ```mermaid
 flowchart TD
-    subgraph SGD 옵티마이저의 진화 계보도
+    subgraph SG_Tree ["SGD 옵티마이저의 진화 계보도"]
     SGD["기본 SGD<br>(똑같은 보폭, 웅덩이에 갇힘)"] --> M["Momentum<br>(과거 속도 기억, 웅덩이 탈출)"]
     SGD --> Ada["AdaGrad<br>(파라미터별 맞춤 보폭, 조기 멈춤 병)"]
     

@@ -52,13 +52,13 @@
 
 ```mermaid
 flowchart TD
-    subgraph 1. 과소적합 (Underfitting)
+    subgraph SG1 ["1. 과소적합 (Underfitting)"]
     A["데이터 패턴은 U자<br>모델은 1차원 일직선 그리기"] --> B["점들의 흐름을 전혀 못 잡음<br>(학습 오차 매우 높음)"]
     end
-    subgraph 2. 이상적 적합 (Good Fit)
+    subgraph SG2 ["2. 이상적 적합 (Good Fit)"]
     C["모델이 부드러운 2차원 곡선(포물선)을 그림"] --> D["점들을 다 스치진 못해도 전체 패턴을 완벽히 이해<br>(새로운 데이터에도 대응 가능)"]
     end
-    subgraph 3. 과적합 (Overfitting)
+    subgraph SG3 ["3. 과적합 (Overfitting)"]
     E["파라미터가 너무 많아<br>모든 점을 억지로 다 잇는 지그재그 선 형성"] --> F["훈련 오차는 0 이지만,<br>처음 보는 새로운 점이 들어오면 오차 대폭발"]
     end
     
@@ -139,12 +139,12 @@ model.add(Dense(10, activation='softmax'))
 
 ```mermaid
 flowchart TD
-    subgraph 훈련 과정 (Training)
+    subgraph SG_Train ["훈련 과정 (Training)"]
     A["전체 뉴런 100개"] --> B{"매 훈련마다<br>무작위 50% 뉴런 끄기"}
     B --> C["50개의 뉴런만 땀흘려 훈련<br>(특정 뉴런 의존성 탈피)"]
     end
     
-    subgraph 실전 테스트 (Validation/Inference)
+    subgraph SG_Test ["실전 테스트 (Validation/Inference)"]
     C --> D{"100개 뉴런 모두 켜기!"}
     D --> E["갑자기 켜진 뉴런들 때문에<br>신호가 2배로 폭주할 위기 발생"]
     E --> F["자동 보상:<br>모든 가중치에 0.5를 곱해서 진정시킴"]
