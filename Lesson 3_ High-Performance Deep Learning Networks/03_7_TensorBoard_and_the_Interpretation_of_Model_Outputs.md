@@ -215,9 +215,11 @@ history = model.fit(X_train, y_train,
 > [!TIP]
 > 텐서보드는 단순히 예쁜 그림이 아닙니다. 상사에게 결과를 보고할 때, 혹은 조기 종료(Early Stopping)를 결단할 때 완벽한 **수치적, 시각적 증거 자료**가 됩니다.
 
-![Colab 텐서보드 UI 화면 1](/Users/shinwookkang/.gemini/antigravity/brain/cb5306ae-e4e0-4381-a3ab-20a49944023c/media__1783752121757.png)
+![Colab 텐서보드 UI 화면 1](<img width="791" height="493" alt="스크린샷 2026-07-11 15 44 48" src="https://github.com/user-attachments/assets/006f799b-04b1-4ba9-9072-378a410dc417" />
+)
 
-![Colab 텐서보드 UI 화면 2](/Users/shinwookkang/.gemini/antigravity/brain/cb5306ae-e4e0-4381-a3ab-20a49944023c/media__1783752135756.png)
+![Colab 텐서보드 UI 화면 2](<img width="790" height="532" alt="스크린샷 2026-07-11 15 45 06" src="https://github.com/user-attachments/assets/e11eb7f2-3393-4dcb-b67b-545f25a9f68c" />
+)
 
 #### 🔎 화면 우측 컨트롤 패널 (Settings) 활용법
 1.  **Smoothing (스무딩 슬라이더)**: 
