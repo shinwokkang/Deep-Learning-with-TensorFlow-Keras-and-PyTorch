@@ -1,4 +1,4 @@
-<img width="791" height="493" alt="스크린샷 2026-07-11 15 44 48" src="https://github.com/user-attachments/assets/aba570f7-5b29-4759-9153-dc14d64ef25e" /># Lesson 3.7: 텐서보드와 모델 출력의 시각적 해석 (TensorBoard and the Interpretation of Model Outputs)
+Lesson 3.7: 텐서보드와 모델 출력의 시각적 해석 (TensorBoard and the Interpretation of Model Outputs)
 
 지금까지 우리는 딥러닝 모델을 훈련시킬 때마다 까만 콘솔 창에 주르륵 흘러내려 가는 수백 줄의 숫자들(Epoch 1, 2, 3... Loss: 0.123...)을 뚫어져라 쳐다보며 모델이 똑똑해지고 있는지 파악해야 했습니다. 
 이 문서는 그 **'숫자 지옥'에서 벗어나, 학습 과정을 화려하고 직관적인 실시간 그래프로 그려주는 궁극의 모니터링 도구인 '텐서보드(TensorBoard)'**의 활용법을 15,000자에 가까운 방대한 딥다이브 해설과 실무 Keras 코드로 아주 상세하게 설명합니다. 또한, Lesson 3을 총결산하며 다음 단계인 CNN으로 넘어가는 거대한 빌드업을 완성합니다.
