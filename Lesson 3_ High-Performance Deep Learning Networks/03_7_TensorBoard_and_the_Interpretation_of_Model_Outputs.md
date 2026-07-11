@@ -1,4 +1,4 @@
-# Lesson 3.7: 텐서보드와 모델 출력의 시각적 해석 (TensorBoard and the Interpretation of Model Outputs)
+<img width="791" height="493" alt="스크린샷 2026-07-11 15 44 48" src="https://github.com/user-attachments/assets/aba570f7-5b29-4759-9153-dc14d64ef25e" /># Lesson 3.7: 텐서보드와 모델 출력의 시각적 해석 (TensorBoard and the Interpretation of Model Outputs)
 
 지금까지 우리는 딥러닝 모델을 훈련시킬 때마다 까만 콘솔 창에 주르륵 흘러내려 가는 수백 줄의 숫자들(Epoch 1, 2, 3... Loss: 0.123...)을 뚫어져라 쳐다보며 모델이 똑똑해지고 있는지 파악해야 했습니다. 
 이 문서는 그 **'숫자 지옥'에서 벗어나, 학습 과정을 화려하고 직관적인 실시간 그래프로 그려주는 궁극의 모니터링 도구인 '텐서보드(TensorBoard)'**의 활용법을 15,000자에 가까운 방대한 딥다이브 해설과 실무 Keras 코드로 아주 상세하게 설명합니다. 또한, Lesson 3을 총결산하며 다음 단계인 CNN으로 넘어가는 거대한 빌드업을 완성합니다.
@@ -215,11 +215,9 @@ history = model.fit(X_train, y_train,
 > [!TIP]
 > 텐서보드는 단순히 예쁜 그림이 아닙니다. 상사에게 결과를 보고할 때, 혹은 조기 종료(Early Stopping)를 결단할 때 완벽한 **수치적, 시각적 증거 자료**가 됩니다.
 
-![Colab 텐서보드 UI 화면 1](<img width="791" height="493" alt="스크린샷 2026-07-11 15 44 48" src="https://github.com/user-attachments/assets/006f799b-04b1-4ba9-9072-378a410dc417" />
-)
+<img width="791" height="493" alt="스크린샷 2026-07-11 15 44 48" src="https://github.com/user-attachments/assets/0726fbb4-5e83-4501-b528-ebc077361a7d" />
+<img width="790" height="532" alt="스크린샷 2026-07-11 15 45 06" src="https://github.com/user-attachments/assets/95afe530-4008-4f75-91d5-dbd3e8024612" />
 
-![Colab 텐서보드 UI 화면 2](<img width="790" height="532" alt="스크린샷 2026-07-11 15 45 06" src="https://github.com/user-attachments/assets/e11eb7f2-3393-4dcb-b67b-545f25a9f68c" />
-)
 
 #### 🔎 화면 우측 컨트롤 패널 (Settings) 활용법
 1.  **Smoothing (스무딩 슬라이더)**: 
