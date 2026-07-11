@@ -82,6 +82,15 @@ flowchart TD
 *   가중치가 쓸데없이 커지려고 하면 -> 전체 오차 점수가 올라가버림 -> 인공지능이 스스로 가중치를 줄이게 됨.
 *   결과적으로 인공지능은 **정말 정답을 맞추는 데 뼈저리게 핵심적인 가중치만 크게 남겨두고, 나머지 자질구레하고 쓸모없는 가중치들은 모조리 0에 가깝게 깎아버립니다.** 불필요한 파라미터가 깎여나가니 자연스럽게 과적합이 치료됩니다.
 
+```python
+# 💻 실전 Keras 코드 예시: L2 정규화 적용
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.regularizers import l2
+
+# 은닉층에 가중치가 커지면 0.01의 강도로 벌점을 주는 l2 규칙을 강제 부여
+model.add(Dense(256, activation='relu', kernel_regularizer=l2(0.01)))
+```
+
 ---
 
 ### 백신 2. 드롭아웃 (Dropout) : 딥러닝 최고의 과적합 치료제
@@ -114,6 +123,19 @@ L1, L2도 좋지만, 딥러닝 전문가들은 **'드롭아웃(Dropout)'**이라
 3.  **얼마나 끄는가? (황금 비율)**:
     *   **이미지(Computer Vision)**: 보통 **20% ~ 50%** 사이의 뉴런을 껐을 때 가장 성능이 좋습니다.
     *   **자연어(NLP/단어 분석)**: 단어 하나하나의 의미가 너무 중요하기 때문에, 50%씩 끄면 문맥이 너무 망가집니다. 보통 **20% ~ 30%** 정도로 살짝만 꺼주는 것이 황금 비율입니다.
+
+```python
+# 💻 실전 Keras 코드 예시: Dropout 적용
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+
+model = Sequential()
+model.add(Dense(256, activation='relu'))
+# 앞선 Dense 층 뉴런의 50%를 무작위로 기절시킴
+# (실전 테스트 시 출력값에 0.5를 곱해 신호 폭주를 막는 작업은 Keras가 100% 자동 처리합니다)
+model.add(Dropout(0.5)) 
+model.add(Dense(10, activation='softmax'))
+```
 
 ```mermaid
 flowchart TD
@@ -153,6 +175,24 @@ flowchart TD
 인공지능의 눈(픽셀 수치)에는 이 모든 사진이 완전히 처음 보는 숫자의 배열(새로운 데이터)로 보입니다. 하지만 사람이 보기엔 어찌 됐든 모두 정답이 '3'입니다. 이런 식으로 기존 데이터에서 약간의 노이즈나 변형을 주어 데이터셋을 10배, 100배로 확장시키면, 인공지능은 훈련 데이터를 억지로 통째로 외우는 짓을 포기하고 진짜 숫자의 '핵심 형태(일반화)'를 학습하게 됩니다. 실제로 딥러닝 성능 대회에서 세계 신기록을 세우는 모델들은 전부 이 데이터 증강 기술의 극한을 달리는 모델들입니다.
 
 (Keras에서는 이미지를 폴더에 넣어두기만 하면 알아서 수천 장으로 비틀고 돌려주는 `keras.io/preprocessing/image` 등의 모듈을 기본으로 제공하여, 2026년 현재 실무자들은 아주 손쉽게 데이터를 증강하고 있습니다.)
+
+```python
+# 💻 실전 Keras 코드 예시: 최신 데이터 증강 레이어 적용
+from tensorflow.keras.layers import RandomRotation, RandomTranslation, RandomZoom
+from tensorflow.keras.models import Sequential
+
+# 원본 이미지 1장이 들어오면 알아서 돌리고, 이동하고, 확대하는 파이프라인
+data_augmentation = Sequential([
+    RandomRotation(0.2),         # 최대 20% 각도로 무작위 회전
+    RandomTranslation(0.1, 0.1), # 상하좌우 무작위로 10% 이동
+    RandomZoom(0.2)              # 최대 20% 무작위 확대/축소
+])
+
+# 모델의 가장 앞단에 증강 파이프라인을 배치하여, 학습 시에만 자동으로 이미지를 뻥튀기함
+model = Sequential()
+model.add(data_augmentation)
+model.add(Dense(256, activation='relu'))
+```
 
 ---
 
