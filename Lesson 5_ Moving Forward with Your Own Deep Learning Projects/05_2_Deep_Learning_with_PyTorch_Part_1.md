@@ -18,7 +18,8 @@
 
 코드를 보기 전에, 아래의 이미지를 통해 Keras와 PyTorch가 훈련(Training)을 대하는 철학적 차이를 먼저 이해해 봅시다.
 
-![Keras vs PyTorch 훈련 철학 비교](/Users/shinwookkang/.gemini/antigravity/brain/cb5306ae-e4e0-4381-a3ab-20a49944023c/keras_vs_pytorch_training_loop_1784003863426.jpg)
+<img width="828" height="760" alt="image" src="https://github.com/user-attachments/assets/b907b4b6-ab99-4a3c-8659-89d75ef05d07" />
+
 
 *   **왼쪽 (Keras)**: 모든 복잡한 톱니바퀴가 `.fit()`이라는 거대한 마법 버튼 하나 안에 숨겨져 있습니다. 사용자는 버튼만 누르면 됩니다.
 *   **오른쪽 (PyTorch)**: 거대한 기계의 덮개를 열어젖혔습니다. '에폭(Epoch) 반복', '배치(Batch) 반복', '순전파(Forward)', '오차 계산(Loss)', '역전파(Backward)', '가중치 업데이트(Optimizer)'라는 모든 톱니바퀴를 사용자가 직접 손으로 조작해야 합니다. 
