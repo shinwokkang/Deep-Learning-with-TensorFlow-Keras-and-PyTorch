@@ -119,7 +119,8 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 고장 난 것이 아닙니다! 이는 아주 자연스러운 현상이며, 그 이유는 **'점수를 측정하는 타이밍'** 때문입니다. 아래 그래프를 보시죠.
 
-![훈련 정확도와 검증 정확도의 미스터리 해답](/Users/shinwookkang/.gemini/antigravity/brain/cb5306ae-e4e0-4381-a3ab-20a49944023c/val_acc_vs_train_acc_1784005073645.jpg)
+<img width="611" height="614" alt="image" src="https://github.com/user-attachments/assets/f94219cf-ac1e-437d-86dc-884b0c8dd5f6" />
+
 
 ### 💡 미스터리 해답: "평균의 함정"
 1.  **훈련 정확도 (Training Accuracy) 계산법**: 
